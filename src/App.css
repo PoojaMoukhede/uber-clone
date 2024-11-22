@@ -104,11 +104,61 @@ a{
   transition: transform 0.3s ease;
 }
 .footer-list .list-unstyled li{
-  margin-bottom:10px;
+  margin-bottom:15px;
+  font-size: 14px;
 }
-.footer-list .list-unstyled li:hover a{
+.footer-list .list-unstyled li a:hover {
   color: #9e9e9e;
 }
 .footer-list .list-unstyled li a{
   color: #ffffff;
+}
+.btn_black:hover{
+  background-color: #333333;
+}
+.footer-list h5{
+  margin-bottom: 25px;
+} 
+.nav-link{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* Custom link styles */
+.custom-link {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px; /* Adjust as needed */
+}
+
+/* Line styling */
+.custom-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: gray;
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.custom-link:hover::after {
+  width: 100%;
+  background-color: black;
+}
+/* Initial state of iframe (hidden below the viewport) */
+.slide-in {
+  opacity: 0; /* Hidden */
+  transform: translateY(50px); /* Position below the original position */
+  transition: all 0.8s ease-in-out; /* Smooth animation */
+}
+
+/* Final state of iframe (visible at its intended position) */
+.slide-in.active {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Original position */
 }

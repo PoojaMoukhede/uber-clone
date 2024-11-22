@@ -27,17 +27,17 @@ const Header = () => {
                   Ride
                 </a>
               </li>
-              <li className="nav-item mx-2">
+              <li className="nav-item mx-1">
                 <a className="nav-link" href="/">
                   Drive
                 </a>
               </li>
-              <li className="nav-item mx-2">
+              <li className="nav-item mx-1">
                 <a className="nav-link" href="/">
                   Business
                 </a>
               </li>
-              <li className="nav-item mx-2">
+              <li className="nav-item mx-1">
                 <a className="nav-link" href="/">
                   About
                 </a>
@@ -46,24 +46,24 @@ const Header = () => {
 
             {/* Right side of the navbar */}
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item mx-2">
+              <li className="nav-item mx-1">
                 <a className="nav-link" href="/login">
                 <i class="fa-solid fa-globe mx-2"></i>
                   EN
                 </a>
               </li>
-              <li className="nav-item mx-2">
+              <li className="nav-item mx-1">
                 <a className="nav-link" href="/signup">
                   Help
                 </a>
               </li>
-              <li className="nav-item mx-2">
+              <li className="nav-item mx-1">
                 <a className="nav-link" href="/login">
                   Log in
                 </a>
               </li> 
-              <li className="nav-item mx-2">
-                <a className="btn btn-light rounded-pill" href="/signup">
+              <li className="nav-item mx-2 ">
+                <a className="btn btn-light rounded-pill" href="/signup" style={{fontSize:'14px',fontWeight:500}}>
                   Sign up
                 </a>
               </li>

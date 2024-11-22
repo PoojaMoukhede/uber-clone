@@ -1,23 +1,43 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 
 const Main = () => {
+  const [view, setView] = useState("ride");
+  const [isVisible, setIsVisible] = useState(false);
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 800);
+  }, []);
+
   return (
     <main className="container mt-5" style={{ width: "80vw" }}>
       <div className="row p-3">
         <div className="col-6">
-          <h1 className="fw-bold" style={{ fontSize: "52px" }}>
-            Go anywhere with Uber
+          <h1 className="fw-bold pb-4" style={{ fontSize: "52px" }}>
+            {view === "ride" ? "Go anywhere with Uber" : "Deliver a package"}
           </h1>
           <div className="row">
             <div className="col-3">
-              <button className="btn ">
+              <button
+                className={`btn ${
+                  view === "ride" ? "text-black" : "text-secondary"
+                }`}
+                onClick={() => setView("ride")}
+              >
                 <i className="fa-solid fa-car" style={{ fontSize: "18px" }}></i>
                 <br />
-                Ride{" "}
+                Ride
               </button>
             </div>
             <div className="col-3">
-              <button className="btn ">
+              <button
+                className={`btn ${
+                  view === "package" ? "text-black" : "text-secondary"
+                }`}
+                onClick={() => setView("package")}
+              >
                 <i
                   className="fa-solid fa-box-open"
                   style={{ fontSize: "18px" }}
@@ -27,9 +47,12 @@ const Main = () => {
               </button>
             </div>
           </div>
-          <div className="d-flex justify-content-center">
+
+          {/* Dynamic Form */}
+          <div className="d-flex justify-content-center mt-4">
             <div className="" style={{ width: "100%" }}>
               <form className="d-flex flex-column gap-2">
+                {/* Pickup Input */}
                 <div className="form-group">
                   <input
                     type="text"
@@ -38,6 +61,7 @@ const Main = () => {
                     placeholder="Pickup location"
                   />
                 </div>
+
                 <div className="form-group">
                   <input
                     type="text"
@@ -46,28 +70,33 @@ const Main = () => {
                     placeholder="Dropoff location"
                   />
                 </div>
-                <div className="row">
-                  <div className="col">
-                    <input
-                      type="date"
-                      placeholder="Today"
-                      className="form-control border-0  p-3"
-                      id="date"
-                    />
+
+                {view === "ride" && (
+                  <div className="row">
+                    <div className="col-5">
+                      <input
+                        type="date"
+                        placeholder="Today"
+                        className="form-control border-0 p-3"
+                        id="date"
+                      />
+                    </div>
+                    <div className="col-5">
+                      <input
+                        type="time"
+                        placeholder="Now"
+                        className="form-control border-0 p-3"
+                        id="time"
+                      />
+                    </div>
+                    <div className="col-2"></div>
                   </div>
-                  <div className="col">
-                    <input
-                      type="time"
-                      placeholder="Now"
-                      className="form-control border-0  p-3"
-                      id="time"
-                    />
-                  </div>
-                </div>
+                )}
+
                 <div>
                   <button
                     type="submit"
-                    className="btn  btn-block mt-5 ms-2"
+                    className="btn btn-block mt-5 ms-2"
                     style={{
                       height: "50px",
                       backgroundColor: "black",
@@ -86,8 +115,8 @@ const Main = () => {
           <div className="mapouter">
             <div className="gmap_canvas">
               <iframe
-                className="gmap_iframe"
-                width="100%"
+            className={`gmap_iframe slide-in ${isVisible ? "active" : ""}`}
+            width="100%"
                 frameborder="0"
                 scrolling="no"
                 marginheight="0"
@@ -201,7 +230,7 @@ const Main = () => {
             >
               Get started
             </button>
-            <a href="#" className="text-dark align-self-center ">
+            <a href="#" className="text-dark align-self-center custom-link">
               Already have an account? Sign in
             </a>
           </div>
@@ -229,8 +258,8 @@ const Main = () => {
             >
               Get started
             </button>
-            <a href="#" className="text-dark align-self-center ">
-            Check out our solutions
+            <a href="#" className="text-dark align-self-center custom-link">
+              Check out our solutions
             </a>
           </div>
         </div>
@@ -253,10 +282,11 @@ const Main = () => {
         </div>
         <div className="col-md-6 text-md-start text-center p-5">
           <h1 className="featurette-heading lh-1 mb-4 p-5 pb-3">
-          Make money by renting out your car
+            Make money by renting out your car
           </h1>
           <p className="lead  mb-4 px-5 pb-3">
-          Connect with thousands of drivers and earn more per week with Uber’s free fleet management tools.
+            Connect with thousands of drivers and earn more per week with Uber’s
+            free fleet management tools.
           </p>
           <div className="d-flex justify-content-md-start justify-content-center px-5">
             <button
@@ -270,43 +300,54 @@ const Main = () => {
             >
               Get started
             </button>
-           
           </div>
         </div>
       </div>
       <div className="row py-5">
-      <h2 className="mb-4 " style={{fontSize:'36px',color:'black'}}>It's easier in the apps</h2>
-      <div className="row justify-content-between">
-      <div className="col-md-6 mb-4 hover-effect" style={{cursor:'pointer'}}>
-          <div className="d-flex  align-items-center gap-5">
-            <img
-              src="/imgs/qr1.png"
-              alt="Download Driver App"
-              className="img-fluid mb-3"
-              width='150'
-            />
-           <p className="mb-0"> <h5 className="p-0 m-0 fw-bold">Download the Driver app</h5>
-           <p className="mb-0">Scan to download</p></p>
+        <h2 className="mb-4 " style={{ fontSize: "36px", color: "black" }}>
+          It's easier in the apps
+        </h2>
+        <div className="row justify-content-between">
+          <div
+            className="col-md-6 mb-4 hover-effect"
+            style={{ cursor: "pointer" }}
+          >
+            <div className="d-flex  align-items-center gap-5">
+              <img
+                src="/imgs/qr1.png"
+                alt="Download Driver App"
+                className="img-fluid mb-3"
+                width="150"
+              />
+              <p className="mb-0">
+                {" "}
+                <h5 className="p-0 m-0 fw-bold">Download the Driver app</h5>
+                <p className="mb-0">Scan to download</p>
+              </p>
               <i className="fas fa-arrow-right arrow-icon"></i>
+            </div>
           </div>
-        </div>
-        <div className="col-md-6 mb-4 hover-effect" style={{cursor:'pointer'}}>
-          <div className="d-flex  align-items-center gap-5">
-            <img
-              src="/imgs/qr2.webp"
-              alt="Download Driver App"
-              className="img-fluid mb-3"
-              width='150'
-            />
-           <p className="mb-0"> <h5 className="p-0 m-0 fw-bold">Download the Driver app</h5>
-           <p className="mb-0">Scan to download</p></p>
+          <div
+            className="col-md-6 mb-4 hover-effect"
+            style={{ cursor: "pointer" }}
+          >
+            <div className="d-flex  align-items-center gap-5">
+              <img
+                src="/imgs/qr2.webp"
+                alt="Download Driver App"
+                className="img-fluid mb-3"
+                width="150"
+              />
+              <p className="mb-0">
+                {" "}
+                <h5 className="p-0 m-0 fw-bold">Download the Driver app</h5>
+                <p className="mb-0">Scan to download</p>
+              </p>
               <i className="fas fa-arrow-right arrow-icon"></i>
+            </div>
           </div>
         </div>
       </div>
-  
-    </div>
-
     </main>
   );
 };
