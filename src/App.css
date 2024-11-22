@@ -1,0 +1,114 @@
+.nav-link {
+  color: rgb(219, 219, 219);
+}
+.navbar-brand {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 550px;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: 550px;
+}
+.gmap_iframe {
+  height: 550px !important;
+}
+.grid{
+  grid-column: 1 / -1;
+  order: 0;
+  width: 100%;
+  -ms-grid-row-align: center;
+  align-self: center;
+  display: -ms-grid;
+  display: grid;
+}
+.css-dcPJSH{
+  background: #F3F3F3;
+  border-radius: 8px;
+  display: inline-block;
+  list-style: none;
+  margin-bottom: 18px;
+  vertical-align: top;
+  width: 100%;
+}
+.css-iwCxLf{
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 16px;
+  text-decoration: none;
+}
+.css-iovQQQ {
+  color: rgb(0, 0, 0);
+  font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-right: 8px;
+}
+.css-kLZafC {
+  height: 128px;
+  object-fit: contain;
+  width: 128px;
+}
+.lead{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #393939;
+}
+
+h1{
+  font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+@font-face {
+  font-family: 'UberMoveText';
+  src: url('../public/font/UberMoveTextBold.otf') format('otf'),
+       url('../public/font/UberMoveTextBold.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+.featurette-heading{
+  font-size: 52px;
+  font-weight: 600;
+  color: black;
+}
+a{
+  text-decoration: none;
+}
+.link_text{
+  border-bottom: #999999 ;
+}
+/* Arrow animation */
+.hover-effect:hover .arrow-icon {
+  transform: translateX(10px); /* Move arrow forward by 10px */
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+/* Initial state for the arrow */
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+.footer-list .list-unstyled li{
+  margin-bottom:10px;
+}
+.footer-list .list-unstyled li:hover a{
+  color: #9e9e9e;
+}
+.footer-list .list-unstyled li a{
+  color: #ffffff;
+}
