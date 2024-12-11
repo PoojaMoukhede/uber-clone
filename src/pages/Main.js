@@ -114,14 +114,16 @@ const Main = () => {
         <div className="col-6">
           <div className="mapouter">
             <div className="gmap_canvas">
+           
               <iframe
-            className={`gmap_iframe slide-in ${isVisible ? "active" : ""}`}
-            width="100%"
-                frameborder="0"
+                className={`gmap_iframe slide-in ${isVisible ? "active" : ""}`}
+                width="100%"
+                title="Google Maps showing Bhopal"
+                frameBorder="0"
                 scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=bhopal&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                marginHeight="0"
+                marginWidth="0"
+                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=bhopal&t=&z=14&ie=UTF8&iwloc=B&output=embed"
               ></iframe>
             </div>
           </div>
@@ -230,7 +232,7 @@ const Main = () => {
             >
               Get started
             </button>
-            <a href="#" className="text-dark align-self-center custom-link">
+            <a href="#/" className="text-dark align-self-center custom-link">
               Already have an account? Sign in
             </a>
           </div>
@@ -258,7 +260,7 @@ const Main = () => {
             >
               Get started
             </button>
-            <a href="#" className="text-dark align-self-center custom-link">
+            <a href="#/" className="text-dark align-self-center custom-link">
               Check out our solutions
             </a>
           </div>
